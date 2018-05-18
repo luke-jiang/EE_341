@@ -1,0 +1,16 @@
+Fs = 8000;
+t_y = 0:(1/Fs):5;
+y = cos(2*pi*300*t_y);
+sound(y, Fs);
+figure;
+n1 = 0:49;
+subplot(2, 1, 1);
+  stem(n1, y(1:50));
+  xlabel('n');
+  ylabel('y = cos(2*pi*300*n)');
+  title('sinusoid in discrete time');
+subplot(2, 1, 2);
+  plot(t_y(1:50), y(1:50));
+  xlabel('t');
+  ylabel('y = cos(2*pi*300*t)');
+  title('sinusoid in continuous time');

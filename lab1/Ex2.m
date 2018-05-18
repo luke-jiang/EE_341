@@ -1,0 +1,15 @@
+[y, fs] = audioread('cat.wav');
+Ts = 1 / fs;
+t_y = (0:length(y)-1) * (1/fs);
+n1 = 0:49;
+figure;
+subplot(2, 1, 1);
+  stem(n1, y(1:50));
+  xlabel('n');
+  ylabel('y');
+  title('cat.wav in discrete time');
+subplot(2, 1, 2);
+  plot(t_y(1:50), y(1:50));
+  xlabel('t');
+  ylabel('y');
+  title('cat.wav in continuous time');
